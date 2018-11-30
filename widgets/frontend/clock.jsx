@@ -17,7 +17,7 @@ import React from 'react';
   }
   // 
   componentDidMount() {
-     this.intervalId = setInterval(this.tick(), 1000);
+     this.intervalId = setInterval(this.tick, 1000);
   }
   componentWillUnmount() {
    clearInterval(this.intervalId);
@@ -39,11 +39,18 @@ import React from 'react';
     return (secs < 10) ? `0${secs}` : secs;
   }
   
+  getDate () {
+    return this.state.time.getDate();
+  }
+  
   render () {
+    var month = this.state.time.getUTCMonth() + 1; //months from 1-12
+    var day = this.state.time.getUTCDate();
+    var year = this.state.time.getUTCFullYear();
     return (
       <div class="clock">
-      <h1>Clock</h1>
-      <h3>{this.getHours()}:{this.getMins()}:{this.getSecs()}</h3>
+      <h1>Time</h1><h3>{this.getHours()}:{this.getMins()}:{this.getSecs()}</h3>
+      <h1>Date</h1><h3>{month}/{day}/{year}</h3>
       </div>
     );
   }

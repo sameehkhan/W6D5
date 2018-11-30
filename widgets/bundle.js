@@ -147,7 +147,7 @@ function (_React$Component) {
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.intervalId = setInterval(this.tick(), 1000);
+      this.intervalId = setInterval(this.tick, 1000);
     }
   }, {
     key: "componentWillUnmount",
@@ -173,11 +173,20 @@ function (_React$Component) {
       return secs < 10 ? "0".concat(secs) : secs;
     }
   }, {
+    key: "getDate",
+    value: function getDate() {
+      return this.state.time.getDate();
+    }
+  }, {
     key: "render",
     value: function render() {
+      var month = this.state.time.getUTCMonth() + 1; //months from 1-12
+
+      var day = this.state.time.getUTCDate();
+      var year = this.state.time.getUTCFullYear();
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         class: "clock"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Clock"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.getHours(), ":", this.getMins(), ":", this.getSecs()));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.getHours(), ":", this.getMins(), ":", this.getSecs()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Date"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, month, "/", day, "/", year));
     }
   }]);
 
