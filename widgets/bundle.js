@@ -97,8 +97,6 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -117,8 +115,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-
-
+ // import ReactDOM from 'react-dom';
 
 var Clock =
 /*#__PURE__*/
@@ -156,24 +153,31 @@ function (_React$Component) {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
       clearInterval(this.intervalId);
-    } // getHours () {
-    //   return this.state.time.getHours();
-    // }
-    // 
-    // getMins () {
-    //   return this.state.time.getMinutes();
-    // }
-    // getSecs () {
-    //   return this.state.time.getSeconds();
-    // }
-
+    }
+  }, {
+    key: "getHours",
+    value: function getHours() {
+      var hours = this.state.time.getHours();
+      return hours < 10 ? "0".concat(hours) : hours;
+    }
+  }, {
+    key: "getMins",
+    value: function getMins() {
+      var mins = this.state.time.getMinutes();
+      return mins < 10 ? "0".concat(mins) : mins;
+    }
+  }, {
+    key: "getSecs",
+    value: function getSecs() {
+      var secs = this.state.time.getSeconds();
+      return secs < 10 ? "0".concat(secs) : secs;
+    }
   }, {
     key: "render",
     value: function render() {
-      var hours = this.state.time.getHours();
-      var minutes = this.state.time.getMinutes();
-      var seconds = this.state.time.getSeconds();
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Clock"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, hours, ":", minutes, ":", seconds));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        class: "clock"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Clock"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.getHours(), ":", this.getMins(), ":", this.getSecs()));
     }
   }]);
 

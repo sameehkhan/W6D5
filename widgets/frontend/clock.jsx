@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 
  class Clock extends React.Component {
   
@@ -23,25 +23,27 @@ import ReactDOM from 'react-dom';
    clearInterval(this.intervalId);
  }
 
-  // getHours () {
-  //   return this.state.time.getHours();
-  // }
-  // 
-  // getMins () {
-  //   return this.state.time.getMinutes();
-  // }
-  // getSecs () {
-  //   return this.state.time.getSeconds();
-  // }
+  getHours () {
+    let hours = this.state.time.getHours();
+    return (hours < 10) ? `0${hours}` : hours; 
+
+  }
+  
+  getMins () {
+    let mins = this.state.time.getMinutes();
+    return (mins < 10) ? `0${mins}` : mins; 
+  }
+    
+  getSecs () {
+    let secs = this.state.time.getSeconds();
+    return (secs < 10) ? `0${secs}` : secs;
+  }
   
   render () {
-    let hours = this.state.time.getHours();
-    let minutes = this.state.time.getMinutes();
-    let seconds = this.state.time.getSeconds();
     return (
-      <div>
+      <div class="clock">
       <h1>Clock</h1>
-      <h3>{hours}:{minutes}:{seconds}</h3>
+      <h3>{this.getHours()}:{this.getMins()}:{this.getSecs()}</h3>
       </div>
     );
   }
