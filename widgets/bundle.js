@@ -125,16 +125,32 @@ var Clock =
 function (_React$Component) {
   _inherits(Clock, _React$Component);
 
-  function Clock() {
+  function Clock(props) {
+    var _this;
+
     _classCallCheck(this, Clock);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Clock).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Clock).call(this, props));
+    _this.state = {
+      time: new Date()
+    };
+    return _this;
   }
 
   _createClass(Clock, [{
+    key: "tick",
+    value: function tick() {
+      this.setState({
+        time: new Date()
+      });
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {}
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Clock"));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Clock"), "setInterval(this.tick(), 3000);");
     }
   }]);
 
