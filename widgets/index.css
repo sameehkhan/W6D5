@@ -6,11 +6,25 @@
 }
 
 .clock {
-  font-family: 'Black Han Sans', sans-serif;
+  font-family: 'Concert One', cursive;
   display: flex;
   justify-content: center;
+  /* align-items: center; */
+}
+
+.mainClock {
+  font-size: 30px;
+  color: white;
   border-radius: 5px;
   border: 1px solid black;
+  margin: 0px 240px 0px 240px;
+
+  /* display: flex; */
+  /* justify-content: center; */
+  background-color: #3cc0f5; 
+  /* margin: 100px; */
+  /* margin-left: 100px;
+  margin-right: 100px; */
 }
 
 .time {
