@@ -45,8 +45,8 @@ import React from 'react';
   }
   
   render () {
-    var month = this.state.time.getUTCMonth() + 1; //months from 1-12
-    var day = this.state.time.getUTCDate();
+    var month = this.state.time.getMonth() +1; //months from 1-12
+    var day = this.state.time.getDate();
     var year = this.state.time.getUTCFullYear();
     return (
       <div>
