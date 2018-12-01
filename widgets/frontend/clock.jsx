@@ -1,4 +1,5 @@
 import React from 'react';
+
 // import ReactDOM from 'react-dom';
 
  class Clock extends React.Component {
@@ -48,10 +49,16 @@ import React from 'react';
     var day = this.state.time.getUTCDate();
     var year = this.state.time.getUTCFullYear();
     return (
-      <div class="clock">
-      <h1>Time</h1><h3>{this.getHours()}:{this.getMins()}:{this.getSecs()}</h3>
-      <h1>Date</h1><h3>{month}/{day}/{year}</h3>
+      <div>
+      <span className="titles"> <h1>Clock</h1></span>
+      <div className="mainClock">
+      <div className="clock">
+      <h2>Time:    {this.getHours()}:{this.getMins()}:{this.getSecs()}</h2></div>
+      <div className="clock"><h2>Date:    {month}/{day}/{year}</h2>
       </div>
+      </div>
+      </div>
+      
     );
   }
   

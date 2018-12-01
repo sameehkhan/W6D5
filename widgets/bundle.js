@@ -184,9 +184,15 @@ function (_React$Component) {
 
       var day = this.state.time.getUTCDate();
       var year = this.state.time.getUTCFullYear();
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        class: "clock"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Time"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.getHours(), ":", this.getMins(), ":", this.getSecs()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Date"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, month, "/", day, "/", year));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "titles"
+      }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Clock")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mainClock"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "clock"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Time:    ", this.getHours(), ":", this.getMins(), ":", this.getSecs())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "clock"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Date:    ", month, "/", day, "/", year))));
     }
   }]);
 
